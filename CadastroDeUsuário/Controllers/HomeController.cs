@@ -6,16 +6,17 @@ namespace CadastroDeUsuário.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public IActionResult Index()
         {
-            return View();
+            Usuário usuário = new Usuário();
+            usuário.Nome = "Conrado Vincoletto";
+            usuário.Email = "conrado@gmail.com";
+            usuário.Endereco = "Rua João Úria, 280";
+            usuário.Cidade = "Mococa";
+
+            return View(usuário);
         }
 
         public IActionResult Privacy()
